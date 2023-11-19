@@ -15,7 +15,7 @@ topic_name = 'customer_churn'
 
 
 # Function to consume data from Kafka topic and predict in real-time
-def consume_from_kafka_streams():
+def consume_from_kafka_streams(socketio):
     consumer_conf = {
         'bootstrap.servers': bootstrap_servers,
         'group.id': 'my_consumer_group',
