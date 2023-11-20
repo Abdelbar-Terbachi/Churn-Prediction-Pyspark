@@ -26,7 +26,7 @@ def send_messages_to_kafka(csvFilePath, topic_name, kafka_bootstrap_servers):
 
 # Decide the Kafka bootstrap servers and topic name
 kafka_bootstrap_servers = "127.0.0.1:9092"
-topic_name = "tutorial"
+topic_name = "churn"
 csvFilePath = r'/Users/aminaterbachi/PycharmProjects/scientificProject/scripts/new_customers.csv'
 
 # Call the function to send messages to Kafka
