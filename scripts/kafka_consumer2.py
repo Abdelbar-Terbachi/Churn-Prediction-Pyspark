@@ -43,7 +43,7 @@ def consume_and_store_and_convert(topic_name, kafka_bootstrap_servers):
     return processed_data
 
 
-# Example usage
+# The Kafka Server amd Topic information
 topic_name = "churn"
 kafka_bootstrap_servers = "127.0.0.1:9092"
 
@@ -51,7 +51,7 @@ kafka_bootstrap_servers = "127.0.0.1:9092"
 processed_data_list = consume_and_store_and_convert(topic_name, kafka_bootstrap_servers)
 
 # Print the final processed data list
-# print(processed_data_list)
+print(processed_data_list)
 
 
 # Load the trained model using pickle
@@ -66,7 +66,6 @@ column_names = ['Names', 'Age', 'Total_Purchase', 'Account_Manager', 'Years', 'N
                 'Company']
 df = pd.DataFrame(final_data, columns=column_names)
 
-# Preprocess each data point and make predictions
 # Preprocess each data point and make predictions
 result_dict = {}
 
@@ -83,5 +82,3 @@ for index, data_point in df.iterrows():
 
     # Store data_point and prediction in the dictionary
     result_dict[str(data_point)] = int(prediction[0])  # Assuming prediction is a numpy array
-
-# Print the result dictionary

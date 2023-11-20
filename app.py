@@ -4,9 +4,6 @@ from scripts.kafka_consumer2 import result_dict
 app = Flask(__name__)
 
 
-# Sample data list
-
-
 @app.route('/display_data')
 def display_data():
     return render_template('dashboard.html', result_dict=result_dict)
