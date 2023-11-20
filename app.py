@@ -1,13 +1,18 @@
-from flask import Flask, render_template, jsonify
-from scripts.kafka_consumer2 import processed_data_list
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
+# Sample data list
+data_list = [
+    {'Name': 'John Doe', 'Age': 25, 'City': 'New York'},
+    {'Name': 'Jane Smith', 'Age': 30, 'City': 'San Francisco'},
+    {'Name': 'Bob Johnson', 'Age': 22, 'City': 'Los Angeles'}
+]
 
-@app.route('/dashboard')
-def dashboard():
-    # You can pass the processed_data_list directly to the template
-    return render_template('dashboard.html', data=processed_data_list)
+
+@app.route('/display_data')
+def display_data():
+    return render_template('dashboard.html', data_list=data_list)
 
 
 if __name__ == '__main__':

@@ -2,20 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Churn Prediction Dashboard</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Data Display</title>
 </head>
 <body>
-<h1>Churn Prediction Results</h1>
-<div id="predictions">
-    {% for data_point in data %}
-    <div class="prediction">
-        <p><strong>Name:</strong> {{ data_point[0] }}</p>
-        <p><strong>Churn Prediction:</strong> {{ data_point[8] }}</p>
-    </div>
-    {% endfor %}
-</div>
+    <h1>Data Display</h1>
+    <ul>
+        {% for item in data_list %}
+            <li>{{ item.Name }} - {{ item.Age }} - {{ item.City }}</li>
+        {% endfor %}
+    </ul>
 </body>
 </html>
