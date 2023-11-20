@@ -6,11 +6,14 @@
     <title>Data Display</title>
 </head>
 <body>
-    <h1>Data Display</h1>
-    <ul>
-        {% for item in data_list %}
-            <li>{{ item.Name }} - {{ item.Age }} - {{ item.City }}</li>
-        {% endfor %}
-    </ul>
+<h1>Data Display</h1>
+<div>
+    {% for data_point, prediction in result_dict.items() %}
+    <div>
+        <p>Data Point: {{ data_point }}</p>
+        <p>Prediction: {{ prediction }}</p>
+    </div>
+    {% endfor %}
+</div>
 </body>
 </html>

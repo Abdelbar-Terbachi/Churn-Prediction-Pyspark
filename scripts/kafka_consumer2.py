@@ -68,6 +68,8 @@ df = pd.DataFrame(final_data, columns=column_names)
 
 # Preprocess each data point and make predictions
 # Preprocess each data point and make predictions
+result_dict = {}
+
 for index, data_point in df.iterrows():
     # Extract relevant features for prediction
     features_for_prediction = data_point[['Age', 'Total_Purchase', 'Account_Manager', 'Years', 'Num_Sites']]
@@ -79,7 +81,7 @@ for index, data_point in df.iterrows():
     # Make predictions using the preprocessed data
     prediction = loaded_model.named_steps['classifier'].predict(preprocessed_data_point)
 
-    # Print the original data and the prediction
-    print(f"Original Data: {data_point}")
-    print(f"Churn Prediction: {prediction}")
-    print("\n")
+    # Store data_point and prediction in the dictionary
+    result_dict[str(data_point)] = int(prediction[0])  # Assuming prediction is a numpy array
+
+# Print the result dictionary
